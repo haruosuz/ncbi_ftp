@@ -33,7 +33,7 @@ The shell script `scripts/run.sh` automatically carries out the entire steps: cr
 
 ## Usage
 
-In the `ncbi_ftp/` directory, we run the shell script `scripts/run.sh` with:
+In the project's main directory `ncbi_ftp/`, we run the shell script `scripts/run.sh` with:
 
     bash scripts/run.sh > log.txt 2>&1 &
 
