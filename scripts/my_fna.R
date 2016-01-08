@@ -36,17 +36,13 @@ plot(bp, gc, xlab = "Length (bp)", ylab = "GC%")
 dev.off()
 
 # Indexing all elements that match pattern
-i <- grep(pattern="Reclinomonas americana|Marchantia polymorpha|Hemiselmis andersenii|Mesostigma viride|Rhodomonas salina|Phytophthora infestans", x=getAnnot(lna), ignore.case=TRUE)
+i <- grep(pattern="Abacion magnum|Appalachioria falcifera|Brachycybe lecontii|Mandrillus sphinx", x=getAnnot(lna))
+
+cat("# Base composition of a DNA sequence\n")
+sapply(lna[i], table)
 
 # Writing sequence data out as a FASTA file
 write.fasta(sequences=lna[i], names=getName(lna[i]), file.out="analysis/sequence.fna")
-
-# DNA words
-cat("# Mononucleotide counts\n")
-sapply(lna[i], table)
-sapply(lna[i], count, 1)
-cat("# Dinucleotide counts\n")
-sapply(lna[i], count, 2)
 
 # Print R version and packages
 sessionInfo()
