@@ -22,4 +22,3 @@ Rscript --vanilla scripts/my_faa.R
 uname -a
 
 echo "[$(date)] Thank you, come again."
-
