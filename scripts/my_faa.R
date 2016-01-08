@@ -17,8 +17,8 @@ length(laa)
 cat("# Length of sequences\n")
 sapply(laa, length)[1:10]
 
-# $length $composition (relative frequencies of amino acids)
-summary(laa[[5]])
+# $length $composition
+unlist(summary(laa[[5]]))
 
 cat("# Protein sequence information\n")
 pdf(file="analysis/plot.aa.pdf")
@@ -35,7 +35,9 @@ i <- grep(pattern="Reclinomonas americana", x=getAnnot(laa), ignore.case=TRUE)
 write.fasta(sequences=laa[i], names=getName(laa[i]), file.out="analysis/sequence.faa")
 
 # Exporting Data
-aau <- sapply(laa[i], function(x) AAstat(x, plot=FALSE)$Compo )
+ aau <- sapply(laa[i], function(x) AAstat(x, plot=FALSE)$Compo ) # absolute frequencies
+#aau <- sapply(laa[i], function(x) summary(x)$composition ) # relative frequencies
+#aau <- sapply(laa[i], function(x) unlist(summary(x)) )
 write.csv(t(aau), file="analysis/table.aa.csv")
 
 # Print R version and packages
