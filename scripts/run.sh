@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Creating directories
-mkdir -p ./{data,analysis/results-$(date +%F)}
+mkdir -p ./{data/$(date +%F),analysis/$(date +%F)}
 
 # Downloading data
 wget -P data/ ftp://ftp.ncbi.nlm.nih.gov/refseq/release/mitochondrion/{*.faa.gz,*.fna.gz}

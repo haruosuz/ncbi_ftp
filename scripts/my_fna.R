@@ -39,7 +39,7 @@ dev.off()
 i <- grep(pattern="Abacion magnum|Appalachioria falcifera|Brachycybe lecontii|Mandrillus sphinx", x=getAnnot(lna))
 
 cat("# Base composition of a DNA sequence\n")
-sapply(lna[i], table)
+lapply(lna[i], table)
 
 # Writing sequence data out as a FASTA file
 write.fasta(sequences=lna[i], names=getName(lna[i]), file.out="analysis/sequence.fna")

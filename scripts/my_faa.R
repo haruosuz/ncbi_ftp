@@ -17,6 +17,9 @@ length(laa)
 cat("# Length of sequences\n")
 sapply(laa, length)[1:10]
 
+# $length $composition (relative frequencies of amino acids)
+summary(laa[[5]])
+
 cat("# Protein sequence information\n")
 pdf(file="analysis/plot.aa.pdf")
 AAstat(laa[[5]], plot = TRUE)
