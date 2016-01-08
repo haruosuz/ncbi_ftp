@@ -42,4 +42,3 @@ write.csv(t(aau), file="analysis/table.aa.csv")
 
 # Print R version and packages
 sessionInfo()
-
