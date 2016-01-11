@@ -18,8 +18,9 @@ length(laa)
 cat("# Length of sequences\n")
 sapply(laa, length)[1:10]
 
-# $length $composition
-unlist(summary(laa[[5]]))
+# http://www.inside-r.org/packages/cran/seqinr/docs/SeqFastaAA
+cat("# AA composition of the n-th element of the list\n")
+x <- summary(laa[[5]])
 
 cat("# Protein sequence information\n")
 pdf(file="analysis/plot.aa.pdf")
