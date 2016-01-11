@@ -35,16 +35,7 @@ The shell script `scripts/run.sh` automatically carries out the entire steps: cr
 
 In the project's main directory `ncbi_ftp/`, we run the shell script `scripts/run.sh` with:
 
-    bash scripts/run.sh
-
-    # To redirect standard output and standard error to separate files, use the `>` and `2>` operators.
-    bash scripts/run.sh > stdout.txt 2> stderr.txt &
-
-    # The `2>&1` operator redirects standard error to the standard output stream.
     bash scripts/run.sh > log.txt 2>&1 &
-
-    # Use `tail -f` to constantly monitor files (use Control-C to stop)
-    tail -f log.txt
 
 ----------
 
@@ -52,13 +43,5 @@ In the project's main directory `ncbi_ftp/`, we run the shell script `scripts/ru
 - [Genomes Download FAQ | 7. How are the new FTP directories structured?](http://www.ncbi.nlm.nih.gov/genome/doc/ftpfaq/#structure)
  - refseq: content includes assembled genome sequence and RefSeq annotation data.
   - viral, mitochondrion, plasmid, plastid [Content is from the RefSeq release FTP site.](ftp://ftp.ncbi.nlm.nih.gov/refseq/release/README)
-
-- [An integrated phylogenomic approach toward pinpointing the origin of mitochondria.](http://www.ncbi.nlm.nih.gov/pubmed/25609566)
- - 'The 6 mitochondrial representatives (Reclinomonas americana, Marchantia polymorpha, Hemiselmis andersenii, Mesostigma viride, Rhodomonas salina and Phytophthora infestans) were selected because they were primitive, gene rich and represented a broad range of phylogenetic diversities.'
-
-- [SeqinR](http://pbil.univ-lyon1.fr/software/seqinr/home?lang=eng)
- - [Using the R SeqinR package](http://davetang.org/muse/2013/05/09/using-the-r-seqinr-package/)
- - [Welcome to a Little Book of R for Bioinformatics!](http://a-little-book-of-r-for-bioinformatics.readthedocs.org/en/latest/index.html)
- - [Applied Statistics for Bioinformatics using R](https://cran.r-project.org/doc/contrib/Krijnen-IntroBioInfStatistics.pdf)
 
 ----------
