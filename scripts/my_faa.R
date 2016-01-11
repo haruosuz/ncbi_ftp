@@ -20,7 +20,7 @@ sapply(laa, length)[1:10]
 
 # http://www.inside-r.org/packages/cran/seqinr/docs/SeqFastaAA
 cat("# AA composition of the n-th element of the list\n")
-x <- summary(laa[[5]])
+summary(laa[[5]])
 
 cat("# Protein sequence information\n")
 pdf(file="analysis/plot.aa.pdf")
