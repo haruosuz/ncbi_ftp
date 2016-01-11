@@ -1,3 +1,4 @@
+cat("\n  This R script analyzes FASTA format sequences of Amino Acids (`.faa.gz`).\n\n")
 
 # Set Working Directory
 #setwd("~/projects/ncbi_ftp/")
