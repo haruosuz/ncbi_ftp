@@ -23,7 +23,6 @@ Analyses of the sequence data were performed using the R SeqinR package.
 
 FASTA format sequences of Nucleic Acids (`.fna.gz`) and Amino Acids (`.faa.gz`) for plasmid, plastid, mitochondrion, and viral genomes were downloaded on 2015-12-18 from <ftp://ftp.ncbi.nlm.nih.gov/refseq/release> into `data/`, using:  
 
-    #wget -b -P data/ ftp://ftp.ncbi.nlm.nih.gov/refseq/release/mitochondrion/{*.faa.gz,*.fna.gz}
     wget -b -P data/ ftp://ftp.ncbi.nlm.nih.gov/refseq/release/{mitochondrion,plasmid,plastid,viral}/{*.faa.gz,*.fna.gz}
     # Downloaded: 15 files, 367M in 4m 45s (1.29 MB/s)
 
