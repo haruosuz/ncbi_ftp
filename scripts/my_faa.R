@@ -3,11 +3,11 @@ cat("\n  This R script analyzes FASTA format sequences of Amino Acids (`.faa.gz`
 # Set Working Directory
 #setwd("~/projects/ncbi_ftp/")
 
-# List files in a directory
-files <- list.files(path="data", pattern=".protein.faa.gz", full.names=TRUE)
-
 # Loading seqinr package
 library(seqinr)
+
+# List files in a directory
+files <- list.files(path="data", pattern="protein.faa.gz", full.names=TRUE)
 
 # Reading sequence data into R
 laa <- read.fasta(file = files[1], seqtype = c("AA"))

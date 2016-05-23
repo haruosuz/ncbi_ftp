@@ -3,11 +3,11 @@ cat("\n  This R script analyzes FASTA format sequences of Nucleic Acids (`.fna.g
 # Set Working Directory
 #setwd("~/projects/ncbi_ftp/")
 
-# List files in a directory
-files <- list.files(path="data", pattern=".genomic.fna.gz", full.names=TRUE)
-
 # Loading seqinr package
 library(seqinr)
+
+# List files in a directory
+files <- list.files(path="data", pattern="genomic.fna.gz", full.names=TRUE)
 
 # Reading sequence data into R
 lna <- read.fasta(file = files[1], seqtype = c("DNA"))
@@ -19,21 +19,21 @@ cat("# Length of sequences\n")
 bp <- sapply(lna, length); summary(bp)
 
 cat("# GC Content\n")
-gc <- sapply(lna, GC); summary(gc)
+gcc <- sapply(lna, GC); summary(gcc)
 
 # Get sequence annotations (FASTA headers)
 annotation <- unlist(getAnnot(lna))
 
 # Exporting Data
-d.f <- data.frame(bp, gc, annotation)
+d.f <- data.frame(bp, gcc, annotation)
 write.csv(d.f, file="analysis/table.na.csv")
 
 # Exploring Data Visually
 pdf(file="analysis/plot.na.pdf")
 par(mfrow=c(2,2))
 hist(bp, main = "Histogram", xlab = "Length (bp)")
-hist(gc, main = "Histogram", xlab = "GC%")
-plot(bp, gc, xlab = "Length (bp)", ylab = "GC%")
+hist(gcc, main = "Histogram", xlab = "GC Content")
+plot(bp, gcc, xlab = "Length (bp)", ylab = "GC Content")
 dev.off()
 
 # Indexing all elements that match pattern
