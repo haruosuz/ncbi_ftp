@@ -16,7 +16,7 @@ cat("# How many sequences\n")
 length(lna)
 
 cat("# Length of sequences\n")
-bp <- sapply(lna, length); summary(bp)
+len <- sapply(lna, length); summary(len)
 
 cat("# GC Content\n")
 gcc <- sapply(lna, GC); summary(gcc)
@@ -25,15 +25,15 @@ gcc <- sapply(lna, GC); summary(gcc)
 annotation <- unlist(getAnnot(lna))
 
 # Exporting Data
-d.f <- data.frame(bp, gcc, annotation)
+d.f <- data.frame(len, gcc, annotation)
 write.csv(d.f, file="analysis/table.na.csv")
 
 # Exploring Data Visually
 pdf(file="analysis/plot.na.pdf")
 par(mfrow=c(2,2))
-hist(bp, main = "Histogram", xlab = "Length (bp)")
+hist(len, main = "Histogram", xlab = "Length (bp)")
 hist(gcc, main = "Histogram", xlab = "GC Content")
-plot(bp, gcc, xlab = "Length (bp)", ylab = "GC Content")
+plot(len, gcc, xlab = "Length (bp)", ylab = "GC Content")
 dev.off()
 
 # Indexing all elements that match pattern
