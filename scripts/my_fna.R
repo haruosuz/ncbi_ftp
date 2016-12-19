@@ -7,10 +7,10 @@ cat("\n  This R script analyzes FASTA format sequences of Nucleic Acids (`.fna.g
 library(seqinr)
 
 # List files in a directory
-files <- list.files(path="data", pattern="genomic.fna.gz", full.names=TRUE)
+files <- list.files(path="data", pattern="\\.fna.gz", full.names=TRUE)
 
 # Reading sequence data into R
-lna <- read.fasta(file = files[1], seqtype = c("DNA"))
+lna <- read.fasta(file = files[6], seqtype = c("DNA"), strip.desc = TRUE)
 
 cat("# How many sequences\n")
 length(lna)
@@ -37,7 +37,7 @@ plot(len, gcc, xlab = "Length (bp)", ylab = "GC Content")
 dev.off()
 
 # Indexing all elements that match pattern
-i <- grep(pattern="Abacion magnum|Appalachioria falcifera|Brachycybe lecontii|Mandrillus sphinx", x=getAnnot(lna))
+i <- grep(pattern="5S ribosomal RNA", x=getAnnot(lna))
 
 cat("# Base composition of a DNA sequence\n")
 lapply(lna[i], table)
